@@ -4,90 +4,22 @@
     <meta charset="UTF-8" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
     <title>Robot Control</title>
-    <link rel="stylesheet" href="robotControl.css" />
+    <link rel="stylesheet" href="index.css" />
     <script>
       document.addEventListener("DOMContentLoaded", (event) => {
         const socket = io();
 
         socket.on("batteryStatus", function (msg) {
           // Zde můžete aktualizovat webovou stránku pomocí přijatých dat
-          document.getElementById("battery-percantage").innerText = msg;
+          // document.getElementById("battery-percantage").innerText = msg;
         });
       });
     </script>
   </head>
   <body>
-    <div class="container-abs">
-      <div class="battery">
-        <img src="images/empty-battery.png" alt="Empty Battery" />
-        <span id="battery-percantage" class="percentage">--</span>
-      </div>
-    </div>
-
-    <div class="speed-organize">
-      <p class="speed-show"><span id="left-motor-speed">0</span> %</p>
-      <input
-        type="range"
-        id="horizontalSlider"
-        min="-65"
-        max="65"
-        value="0"
-        step="1"
-        orient="horizontal" />
-      <p class="speed-show"><span id="right-motor-speed">0</span> %</p>
-    </div>
-
-    <div class="wrapper-control">
-      <div class="slider-container">
-        <input
-          type="range"
-          id="verticalSlider"
-          min="0"
-          max="100"
-          value="0"
-          step="1"
-          orient="vertical" />
-      </div>
-      <div id="buttons" class="buttons-organize">
-        <!-- Tlačítka pro ovládání -->
-        <button class="button-control" id="button-movement">Controls ON</button>
-        <button class="button-control" id="button-motor">Motor ON</button>
-        <button class="button-control" id="button-lights">Car light ON</button>
-        <button class="button-control" id="button-reverse">Reverse ON</button>
-        <button class="button-control" id="button-firstspeed">100 rpm</button>
-        <button class="button-control" id="button-resetscanner">
-          Scanner reset
-        </button>
-        <button class="button-control" id="button-demo">Lights 2 ON</button>
-        <button class="button-control" id="button-tank">Tank mode ON</button>
-
-        <button class="button-control" id="button-secondspeed">300 rpm</button>
-        <button class="button-control" id="button-demo">Column UP</button>
-        <button class="button-control" id="button-demo">Lights 3 ON</button>
-        <button class="button-control" id="button-foceni">
-          Camera photo shoot
-        </button>
-
-        <button class="button-control" id="button-thirdspeed">500 rpm.</button>
-        <button class="button-control" id="button-demo">Column down</button>
-        <button class="button-control" id="button-demo">Lights 4 ON</button>
-        <!-- <button class="button-control" id="button-etl">ETL</button> -->
-        <button class="button-autostart" id="button-autostart">
-          Autostart
-        </button>
-      </div>
-    </div>
-    <div id="buttons" class="buttons-organize-second-row">
-      <button class="button-autostart" id="button-autostart">Run task</button>
-      <button class="button-control" id="button-demo">Cancel</button>
-    </div>
-    <button class="button-orientation" id="requestPermissionButton">
-      Orientation
-    </button>
     <script src="/socket.io/socket.io.js"></script>
     <script src="robotControl.js"></script>
-    <script src="animation.js"></script>
   </body>
 </html>
