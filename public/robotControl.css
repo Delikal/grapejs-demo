@@ -1,0 +1,227 @@
+body {
+    touch-action: none;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background-color: #fefefa;
+  }
+  
+  .buttons-organize {
+    display: flex;
+    width: 90%;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .buttons-organize-second-row {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 60px;
+    padding-left: 60px;
+    gap: 50px;
+    flex-wrap: wrap;
+  }
+  
+  .button-control {
+    background-color: #181c32;
+    font-family: var(
+      --heading-h-30-30-600-font-family,
+      "Inter-SemiBold",
+      sans-serif
+    );
+    border-radius: 5px;
+    color: white;
+    width: 24%;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    border-color: #181c32;
+    font-weight: 600;
+    letter-spacing: 1px;
+    user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    transition: transform 0.3s ease;
+  }
+  
+  .speed-organize {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .speed-show {
+    color: #181c32;
+    font-family: var(
+      --heading-h-30-30-600-font-family,
+      "Inter-SemiBold",
+      sans-serif
+    );
+    font-size: 1.8rem;
+    font-weight: 800;
+    border: 2px solid #181c32;
+    border-radius: 15px;
+    padding: 5px 15px 5px 15px;
+  }
+  
+  .button-control.active {
+    background-color: #549f93;
+    border: none;
+  }
+  
+  .container-abs {
+    position: absolute;
+    width: 100%;
+    height: 10vh;
+    z-index: -1;
+  }
+  
+  .battery {
+    position: absolute;
+    top: 25px; /* Adjust as needed */
+    right: 50px; /* Adjust as needed */
+    text-align: center;
+  }
+  
+  .battery img {
+    height: 50px;
+  }
+  
+  .percentage {
+    position: absolute;
+    top: 17px; /* Adjust as needed */
+    right: 8px;
+    font-size: 14px; /* Adjust the font size as needed */
+    font-weight: bold;
+    font-family: var(
+      --heading-h-30-30-600-font-family,
+      "Inter-SemiBold",
+      sans-serif
+    );
+    color: #181c32;
+  }
+  
+  .button-orientation {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: transparent;
+    border: none;
+    color: #181c32;
+  }
+  
+  .slider-container {
+    height: 300px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: calc(-10rem - 1vw);
+    top: calc(3rem - 1vw);
+  }
+  
+  #verticalSlider {
+    -webkit-appearance: none; /* Override default CSS styles */
+    appearance: none;
+    width: 400px; /* Height of the slider */
+    height: 2px; /* Thickness of the slider */
+    border-radius: 15px; /* Optional: adds rounded corners to the slider */
+    background: #c5c5c5; /* Slider background */
+    outline: none; /* Removes the outline */
+    transform: rotate(270deg); /* Rotate slider to vertical */
+    cursor: pointer;
+  }
+  
+  #verticalSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 80px; /* Width of the thumb */
+    height: 50px; /* Height of the thumb */
+    border-radius: 25%;
+    background: #181c32; /* Thumb background */
+    border: 3px solid #549f93;
+  }
+  
+  #verticalSlider::-moz-range-thumb {
+    width: 80px; /* Width of the thumb */
+    height: 50px; /* Height of the thumb */
+    border-radius: 50%;
+    background: #181c32; /* Thumb background */
+    border: 3px solid #549f93;
+    border-width: 1px;
+  }
+  
+  #horizontalSlider {
+    width: 50%;
+    height: 3px; /* Výška dráhy */
+    background: #c5c5c5; /* Barva pozadí dráhy */
+    -webkit-appearance: none; /* Odstraní výchozí styl pro Webkit prohlížeče */
+    appearance: none; /* Odstraní výchozí styl pro ostatní prohlížeče */
+    border-radius: 4px; /* Zakulacené rohy pro dráhu */
+  }
+  
+  #horizontalSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 50px;
+    height: 50px;
+    background: #181c32; /* Thumb background */
+    border: 3px solid #549f93;
+    cursor: pointer;
+    border-radius: 50%;
+    border-width: 1px;
+  }
+  
+  #horizontalSlider::-moz-range-thumb {
+    width: 50px;
+    height: 50px;
+    background: #181c32; /* Thumb background */
+    border: 3px solid #549f93;
+    cursor: pointer;
+    border-radius: 50%;
+    border-width: 1px;
+  }
+  
+  #horizontalSlider::-ms-thumb {
+    width: 50px; /* šířka posuvníku */
+    height: 50px; /* výška posuvníku */
+    background: #181c32; /* Thumb background */
+    border: 3px solid #549f93;
+    cursor: pointer;
+    border-radius: 50%;
+    border-width: 1px;
+  }
+  
+  .wrapper-control {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    position: relative;
+  }
+  
+  .button-autostart {
+    background-color: #149331;
+    font-family: var(
+      --heading-h-30-30-600-font-family,
+      "Inter-SemiBold",
+      sans-serif
+    );
+    border-radius: 5px;
+    color: white;
+    width: 24%;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    border-color: #181c32;
+    font-weight: 600;
+    letter-spacing: 1px;
+    user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    transition: transform 0.3s ease;
+  }
+  
